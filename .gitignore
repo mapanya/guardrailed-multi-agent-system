@@ -1,0 +1,23 @@
+# Secrets: never upload keys
+.env
+
+# Python working files
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Memory data created at run time (contains your organisation facts)
+data/
+
+# Raw run logs (copy the ones you want to keep into docs/evidence/)
+logs/
+
+# Editor and system files
+.vscode/
+.ipynb_checkpoints/
+.DS_Store

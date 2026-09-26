@@ -1,0 +1,31 @@
+# ---------------------------------------------------------------------------
+# Ready-made sample jobs. Run one with:  --scenario <name>
+# Or type any job directly with:        --task "your own description"
+# ---------------------------------------------------------------------------
+
+scenarios:
+  phishing:
+    profile: security_incident
+    task: >-
+      A finance officer reports a suspicious email that asks them to update
+      supplier bank details through a link. Two other staff clicked the link.
+  ransomware:
+    profile: security_incident
+    task: >-
+      Several file shares on the head office server show renamed files and a
+      ransom note. Staff cannot open shared documents.
+  lost_laptop:
+    profile: security_incident
+    task: >-
+      A sales manager reports that their company laptop was stolen from a car.
+      The laptop holds client proposals and has saved email access.
+  account_takeover:
+    profile: security_incident
+    task: >-
+      The service desk sees impossible-travel sign-in alerts for a director's
+      email account, followed by new inbox forwarding rules.
+  new_customer:
+    profile: customer_onboarding
+    task: >-
+      A new corporate customer has signed a managed security services contract
+      and needs to be onboarded within two weeks.

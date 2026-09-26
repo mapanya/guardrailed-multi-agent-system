@@ -1,0 +1,20 @@
+# Runs the automated tests on GitHub every time code is pushed.
+# The tests use stand-in workers, so no key or model service is needed.
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test libraries
+        run: pip install -r requirements-dev.txt
+      - name: Run tests
+        run: python -m pytest

@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# Main settings for the guardrailed multi-agent system.
+# Every value here can be changed without touching the Python code.
+# Values marked "env" can also be overridden by an environment variable.
+# ---------------------------------------------------------------------------
+
+guardrails:
+  # Hard cap on how many times the Executor may run for one job.
+  # The graph stops and returns the fallback answer when execution_count > max_executions.
+  max_executions: 3
+  # Emergency stop. When true, the run halts before any worker is called.
+  # env: MAS_KILL_SWITCH=1
+  kill_switch: false
+  # Second, independent safety net inside LangGraph itself.
+  # It limits the total number of graph steps, whatever the counter says.
+  recursion_limit: 25
+
+models:
+  # Groq service address (OpenAI-compatible). env: MAS_BASE_URL
+  base_url: "https://api.groq.com/openai/v1"
+  # Model used by the Planner, Executor and Reviewer. env: MAS_WORKER_MODEL
+  worker_model: "openai/gpt-oss-120b"
+  # Smaller, faster model used by the output checker and the memory layer.
+  # env: MAS_HELPER_MODEL
+  helper_model: "openai/gpt-oss-20b"
+  # 0 means "same input, same style of answer" as far as possible.
+  temperature: 0
+  # How much hidden "thinking" the model does before answering: low, medium or high.
+  # "low" keeps answers fast and uses far fewer tokens of the free daily allowance.
+  reasoning_effort: "low"
+  # How many times to retry a call when the service says "slow down".
+  max_retries: 6
+
+validation:
+  # How many extra tries the PydanticAI output checker gets to repair a reply.
+  checker_retries: 2
+
+memory:
+  enabled: true
+  # Folder holding the SQLite history file and the local search index.
+  # env: MAS_DATA_DIR (in Colab this can point to Google Drive)
+  data_dir: "data"
+  sqlite_file: "mem0_history.db"
+  vector_folder: "chroma"
+  collection_name: "guardrailed_mas_memory"
+  # Small free text model used to find related memories. env: MAS_EMBEDDER_MODEL
+  embedder_model: "sentence-transformers/all-MiniLM-L6-v2"
+  # How many remembered facts are handed to the workers at most.
+  max_recalled_facts: 5
+  # false = store short facts exactly as written, with no extra model call.
+  # This keeps token use flat and makes memory predictable.
+  infer_facts: false
+
+logging:
+  folder: "logs"
+  level: "INFO"

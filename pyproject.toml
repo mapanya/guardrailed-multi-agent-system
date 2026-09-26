@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guardrailed-mas"
+version = "1.0.0"
+description = "Planner, Executor and Reviewer workflow with hard execution limits, strict output checks and local memory."
+requires-python = ">=3.10,<3.14"
+# Libraries are listed in requirements.txt (full) and requirements-dev.txt (tests only).
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-v"
