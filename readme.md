@@ -15,7 +15,7 @@ The system turns a reported security incident into an approved first-response ch
 
 ## Architecture
 
-The full diagram is in [docs/architecture.pptx](docs/architecture.pptx). The workflow graph below is generated from the code itself (`python -m guardrailed_mas.main draw-graph`).
+The diagram and workflows are in docs folder. The workflow graph below is generated from the code itself (`python -m guardrailed_mas.main draw-graph`).
 
 ```mermaid
 flowchart TD

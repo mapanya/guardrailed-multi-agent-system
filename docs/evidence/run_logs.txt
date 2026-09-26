@@ -1,0 +1,29 @@
+==================== logs/run_20260926_211633.jsonl
+{"time": "2026-09-26T21:16:56+00:00", "level": "INFO", "logger": "guardrailed_mas.memory", "message": "Memory ready. SQLite history file: /content/guardrailed-multi-agent-system/data/mem0_history.db"}
+{"time": "2026-09-26T21:16:56+00:00", "level": "INFO", "logger": "guardrailed_mas.main", "message": "Starting job for user demo_user with profile security_incident (cap=3)"}
+{"time": "2026-09-26T21:16:58+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "recall_memory", "user_id": "demo_user", "facts_found": 2}
+{"time": "2026-09-26T21:17:01+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "planner", "valid": true, "validated_by": "direct", "steps": 5}
+{"time": "2026-09-26T21:17:01+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "budget_gate", "execution_count": 1, "max_executions": 3, "exceeded": false}
+{"time": "2026-09-26T21:17:03+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "executor", "attempt": 1, "valid": true, "validated_by": "direct", "items": 7}
+{"time": "2026-09-26T21:17:03+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "reviewer", "approved": true, "score": 9, "validated_by": "direct", "execution_count": 1}
+{"time": "2026-09-26T21:17:03+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "finalize", "status": "approved", "attempts_used": 1}
+{"time": "2026-09-26T21:17:03+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "save_memory", "saved": true}
+
+==================== logs/run_20260926_212210.jsonl
+{"time": "2026-09-26T21:22:35+00:00", "level": "INFO", "logger": "guardrailed_mas.memory", "message": "Memory ready. SQLite history file: /content/guardrailed-multi-agent-system/data/mem0_history.db"}
+{"time": "2026-09-26T21:22:35+00:00", "level": "INFO", "logger": "guardrailed_mas.main", "message": "Starting job for user demo_user with profile security_incident (cap=3)"}
+{"time": "2026-09-26T21:22:37+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "recall_memory", "user_id": "demo_user", "facts_found": 3}
+{"time": "2026-09-26T21:22:40+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "planner", "valid": true, "validated_by": "direct", "steps": 6}
+{"time": "2026-09-26T21:22:40+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "budget_gate", "execution_count": 1, "max_executions": 3, "exceeded": false}
+{"time": "2026-09-26T21:22:42+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "executor", "attempt": 1, "valid": true, "validated_by": "direct", "items": 7}
+{"time": "2026-09-26T21:22:42+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "reviewer", "approved": false, "score": 0, "validated_by": "direct", "execution_count": 1}
+{"time": "2026-09-26T21:22:42+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "budget_gate", "execution_count": 2, "max_executions": 3, "exceeded": false}
+{"time": "2026-09-26T21:22:43+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "executor", "attempt": 2, "valid": true, "validated_by": "direct", "items": 7}
+{"time": "2026-09-26T21:22:43+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "reviewer", "approved": false, "score": 0, "validated_by": "direct", "execution_count": 2}
+{"time": "2026-09-26T21:22:43+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "budget_gate", "execution_count": 3, "max_executions": 3, "exceeded": false}
+{"time": "2026-09-26T21:22:45+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "executor", "attempt": 3, "valid": true, "validated_by": "direct", "items": 7}
+{"time": "2026-09-26T21:22:45+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "reviewer", "approved": false, "score": 0, "validated_by": "direct", "execution_count": 3}
+...
+{"time": "2026-09-26T21:43:17+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "reviewer", "approved": true, "score": 9, "validated_by": "direct", "execution_count": 1}
+{"time": "2026-09-26T21:43:17+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "finalize", "status": "approved", "attempts_used": 1}
+{"time": "2026-09-26T21:43:17+00:00", "level": "INFO", "logger": "guardrailed_mas.graph", "node": "save_memory", "saved": true}
